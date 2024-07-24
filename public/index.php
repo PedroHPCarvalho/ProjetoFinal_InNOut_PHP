@@ -1,16 +1,12 @@
 <?php
 
-require_once(dirname(__FILE__, 2) . '/src/config/database.php');
-require_once(dirname(__FILE__, 2) . '/src/models/User.php');
+require_once(dirname(__FILE__,2) . '/src/config/config.php');
+require_once(dirname(__FILE__,2) . '/src/models/User.php');
 
-// $sql = 'SELECT * FROM users';
-// $result = Database::getResultFromQuery();
+$user = new User(['name' => 'Pedro', 'email' => 'pedro@gmail.com']);
 
-// while($rom = $result->fetch_assoc()){
-//     print_r($rows);
-//     echo '<br>';
-// }
+echo User::getSelect(['id' => 1], 'name','email');
+echo '<br>';
+echo User::getSelect(['name' => 'Chaves','email' => 'chaves@cod3r.com.br']);
 
-$user = new User(['name' => 'Lucas', 'email' => 'lucassla@gmail.com.br']);
-print_r($user);
-echo 'Fim';
+

@@ -1,5 +1,5 @@
 <?php
-require_once(realpath(MODEL_PATH . 'Model.php'));
+require_once(realpath(MODEL_PATH . '/Model.php'));
 
 class User extends Model{
     protected static $tableName = 'users';
@@ -10,7 +10,7 @@ class User extends Model{
         'email',
         'start_date',
         'end_date',
-        'is_admin'
+        'is_admin',
     ];
 
 }
