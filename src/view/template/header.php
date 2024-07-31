@@ -12,14 +12,29 @@
 <body>
   <header class="header">
     <div class="logo">
-        <i class="icofont-travelling"></i>
+        <i class="icofont-travelling mr-2"></i>
         <span class="font-weight-light">In</span>
         <span class="font-weight-bold mx-2">N'</span>
         <span class="font-weight-light">Out</span>
         <i class="icofont-runner-alt-1"></i>
     </div>
-    <div class="meno-toggle mx-3">
+    <div class="menu-toggle mx-3">
       <i class="icofont-navigation-menu"></i>
     </div>
     <div class="spacer"></div>
+    <div class="dropdown">
+      <div class="dropdown-button">
+        <span class="ml-4">Usuário Genérico</span>
+        <i class="icofont-simple-down mx-2"></i>
+        <div class="dropdown-content">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="logout.php">
+                Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </header>
