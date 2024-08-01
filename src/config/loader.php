@@ -17,7 +17,7 @@ function loadView($viewName, $params = array()){
 
 function loadTemplateView($viewName, $params = array()){
   if(count($params) > 0){
-    foreach($prams as $key => $value){
+    foreach($params as $key => $value){
       if(strlen($key) > 0){
         ${$key} = $value;
       }
@@ -27,4 +27,8 @@ function loadTemplateView($viewName, $params = array()){
   require_once(TEMPLATE_PATH . "/left.php");
   require_once(VIEW_PATH . "/{$viewName}.php");
   require_once(TEMPLATE_PATH . "/footer.php");
+}
+
+function renderTitle($title,$subtitle,$icon = null){
+  require_once(TEMPLATE_PATH . "/title.php");
 }
