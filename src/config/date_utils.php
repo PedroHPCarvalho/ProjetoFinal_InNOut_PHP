@@ -21,56 +21,53 @@ function getNextDay($date) {
     return $inputDate;
 }
 
-function sumIntervals($interval1,$interval2){
+function sumIntervals($interval1, $interval2) {
     $date = new DateTime('00:00:00');
     $date->add($interval1);
     $date->add($interval2);
     return (new DateTime('00:00:00'))->diff($date);
 }
 
-function subtractIntervals($interval1,$interval2){
+function subtractIntervals($interval1, $interval2) {
     $date = new DateTime('00:00:00');
     $date->add($interval1);
     $date->sub($interval2);
     return (new DateTime('00:00:00'))->diff($date);
 }
 
-function getDateFromInterval($interval){
+function getDateFromInterval($interval) {
     return new DateTimeImmutable($interval->format('%H:%i:%s'));
 }
 
-function getDateFromString($str){
-    return DateTimeImmutable::createFromFormat('H:i:s', $str);
-}
 
-function getFirstDayOfMonth($date){
+function getFirstDayOfMonth($date) {
     $time = getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-1', $time));
 }
 
-function getLastDayOfMonth($date){
+function getLastDayOfMonth($date) {
     $time = getDateAsDateTime($date)->getTimestamp();
     return new DateTime(date('Y-m-t', $time));
 }
 
-function getSecondsFromDateInterval($interval){
+function getSecondsFromDateInterval($interval) {
     $d1 = new DateTimeImmutable();
     $d2 = $d1->add($interval);
     return $d2->getTimestamp() - $d1->getTimestamp();
 }
 
-function isPastWorkday($date){
+function isPastWorkday($date) {
     return !isWeekend($date) && isBefore($date, new DateTime());
 }
 
-function getTimeStringFromSeconds($seconds){
+function getTimeStringFromSeconds($seconds) {
     $h = intdiv($seconds, 3600);
     $m = intdiv($seconds % 3600, 60);
     $s = $seconds - ($h * 3600) - ($m * 60);
-    return sprintf('%02d:%02d:%02d', $h,$m,$s);
+    return sprintf('%02d:%02d:%02d', $h, $m, $s);
 }
 
-function formatDateWithLocale($date, $pattern){
+function formatDateWithLocale($date, $pattern) {
     $time = getDateAsDateTime($date)->getTimestamp();
-    return strftime($pattern,$time);
+    return strftime($pattern, $time);
 }
